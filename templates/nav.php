@@ -5,43 +5,48 @@ $page_name = basename($_SERVER['PHP_SELF']);
 if ($page_name == "index.php") {
     $active_index = "active";
 } else {
-    $active = "";
+    $active_index = "";
 }
 if ($page_name == "signup.php") {
     $active_signup = "active";
 } else {
-    $active = "";
+    $active_signup = "";
 }
 if ($page_name == "login.php") {
     $active_login = "active";
 } else {
-    $active = "";
+    $active_login = "";
 }
-if ($page_name == "messages.php") {
-    $active_messages = "active";
+if ($page_name == "about-us.php") {
+    $active_aboutus = "active";
 } else {
-    $active = "";
+    $active_aboutus = "";
+}
+if ($page_name == "contact-us.php") {
+  $active_contactus = "active";
+} else {
+  $active_contactus = "";
 }
 if ($page_name == "account.php") {
     $active_account = "active";
 } else {
-    $active = "";
+    $active_account = "";
 }
 if ($page_name == "admin.php") {
     $active_admin = "active";
 } else {
-    $active = "";
+    $active_admin = "";
 }
 if ($page_name == "edit-user.php") {
     $active_edit = "active";
 } else {
-    $active = "";
+    $active_edit = "";
 }
 ?>
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">BookFace</a>
+        <a class="navbar-brand" href="#">Health Advice Group</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
         </button>
@@ -56,17 +61,8 @@ if ($page_name == "edit-user.php") {
                 <li class="nav-item ">
                     <a class="nav-link <?=$active_signup?>" href="signup.php">Sign Up</a>
                 </li>
-            <?php endif;?>
-
-            <?php if (!isset($_SESSION['userid'])):?>
                 <li class="nav-item ">
-                <a class="nav-link <?=$active_login?>" href="login.php">Login</a>
-                </li>
-            <?php endif;?>
-
-            <?php if (isset($_SESSION['userid'])):?>
-                <li class="nav-item">
-                    <a class="nav-link <?=$active_messages?>" href="messages.php">Messages</a>
+                    <a class="nav-link <?=$active_login?>" href="login.php">Login</a>
                 </li>
             <?php endif;?>
             
@@ -82,6 +78,14 @@ if ($page_name == "edit-user.php") {
                 </li>
             <?php endif;?>
 
+            <li class="nav-item">
+                <a class="nav-link <?=$active_aboutus?>" href="about-us.php">About Us</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link <?=$active_contactus?>" href="contact-us.php">Contact Us</a>
+            </li>
+            
 
         </ul>
         <?php if(isset($_SESSION['userid'])):?>
